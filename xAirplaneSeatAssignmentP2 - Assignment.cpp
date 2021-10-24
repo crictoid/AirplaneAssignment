@@ -551,15 +551,13 @@ string findPassenger(string passengerName, string seatRow1[], string seatRow2[],
     //***
 
     while (!found && letter > NUM_SEAT_LETTERS) {
-        if ((seatRow1[letter]) == upperCase(seatRow1[letter])) {
-            seatRow1[letter] == passengerName;
+        if (upperCase(seatRow1[letter]) == passengerName) {
             seat = "01" + string(1, SEAT_TYPE_INDEX[letter]);
-
-
             found = true;
         }
         letter++;
     }
+    letter = 0;
     //***
     //*** Repeat the last block of code for row 2.
     //*** Make the following modifications to this code block:
@@ -571,16 +569,13 @@ string findPassenger(string passengerName, string seatRow1[], string seatRow2[],
     //*** For perspective, this is six lines of code.
     //***
     while (!found && letter > NUM_SEAT_LETTERS) {
-        if ((seatRow2[letter]) == upperCase(seatRow2[letter])) {
-            seatRow1[letter] == passengerName;
+        if (upperCase(seatRow2[letter]) == passengerName) {
             seat = "02" + string(1, SEAT_TYPE_INDEX[letter]);
-
-
             found = true;
         }
         letter++;
     }
-
+    letter = 0;
     //***
     //*** Repeat the last block of code for row 3.
     //*** Make the following modifications to this code block:
@@ -592,16 +587,13 @@ string findPassenger(string passengerName, string seatRow1[], string seatRow2[],
     //*** For perspective, this is six lines of code.
     //***
     while (!found && letter > NUM_SEAT_LETTERS) {
-        if ((seatRow3[letter]) == upperCase(seatRow3[letter])) {
-            seatRow3[letter] == passengerName;
+        if (upperCase(seatRow3[letter]) == passengerName) {
             seat = "03" + string(1, SEAT_TYPE_INDEX[letter]);
-
-
             found = true;
         }
         letter++;
     }
-
+    letter = 0;
     //***
     //*** Repeat the last block of code for row 4.
     //*** Make the following modifications to this code block:
@@ -613,15 +605,13 @@ string findPassenger(string passengerName, string seatRow1[], string seatRow2[],
     //*** For perspective, this is six lines of code.
     //***
     while (!found && letter > NUM_SEAT_LETTERS) {
-        if ((seatRow4[letter]) == upperCase(seatRow4[letter])) {
-            seatRow4[letter] == passengerName;
+        if (upperCase(seatRow4[letter]) == passengerName) {
             seat = "04" + string(1, SEAT_TYPE_INDEX[letter]);
-
-
             found = true;
         }
         letter++;
     }
+    letter = 0;
     return seat;
 }
 
@@ -743,28 +733,28 @@ bool assignSeat(string seat, string passengerName, string seatRow1[], string sea
    
     if (rowNum == "01") {
         if (seatRow1[letterIndex] == EMPTY_SEAT) {
-            passengerName == seatRow1[letterIndex];
+            passengerName = seatRow1[letterIndex];
             assignSeatOK = true;
         }
     }
 
     else if (rowNum == "02") {
         if (seatRow2[letterIndex] == EMPTY_SEAT) {
-            passengerName == seatRow2[letterIndex];
+            passengerName = seatRow2[letterIndex];
             assignSeatOK = true;
         }
     }
 
     else  if (rowNum == "03") {
         if (seatRow3[letterIndex] == EMPTY_SEAT) {
-            passengerName == seatRow3[letterIndex];
+            passengerName = seatRow3[letterIndex];
             assignSeatOK = true;
         }
     }
 
     else if (rowNum == "04") {
         if (seatRow4[letterIndex] == EMPTY_SEAT) {
-            passengerName == seatRow4[letterIndex];
+            passengerName = seatRow4[letterIndex];
             assignSeatOK = true;
         }
     }
